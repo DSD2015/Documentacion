@@ -58,21 +58,22 @@ GO
 -------trabajador--------- creo que debe tener ya datos y tbm podemos registrar otros 
 
 
-CREATE TABLE TRABAJADOR
-  (
-    Co_Trabajador NUMERIC (8) NOT NULL , -- PK DNI codigo del trabajador
-    No_Trabajador VARCHAR (50) NOT NULL, -- nombre del trabajador
-    Ap_Trabajador VARCHAR (50) NOT NULL, -- apellido paterno
-    Am_Trabajador VARCHAR (50) NOT NULL, -- apellido materno
-    Co_Perfil	  NUMERIC (10) NOT NULL , -- FK codigo del perfil 001, 002, 003 etc
-    De_Perfil     VARCHAR (100) NOT NULL , -- desripcion del perfil Jefe de Proyec, Anal Funcinal,  programador
-    Cn_Trabajador VARCHAR (100) NOT NULL , -- conocimiento si es un programador aca se guardara x ejemplo Java. o .Net etc
-    Fl_Trabajador CHAR (1) NOT NULL , -- estado del trabajador : 1 Activo 2 Anulado 
-    Ge_Trabajador CHAR (1) NOT NULL, --?? Podemos obviar genero 1 masculino, 2 hombre
-    Rn_Trabajador CHAR (1) NOT NULL, --?? Podemos obviar rango 1 Senior, 2 Junior, 3 Practicante
-    Fe_Nacimiento DATE, 
-    Fe_Creacion	  DATE  -- fecha de  creacion    
-  )
+
+CREATE TABLE [dbo].[RECURSO](
+	[CODTRABAJADOR] [int] IDENTITY(1,1) NOT NULL,
+	[NOMBRE] [varchar](50) NULL,
+	[APEPAT] [varchar](50) NULL,
+	[APEMAT] [varchar](50) NULL,
+	[EDAD] [int] NULL,
+	[NRODCOC] [varchar](50) NULL,
+	[ESPECIALIDAD] [varchar](50) NULL,
+	[PERFIL] [int] NULL,
+ CONSTRAINT [PK_RECURSO] PRIMARY KEY CLUSTERED 
+(
+	[CODTRABAJADOR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
 GO
 
 
