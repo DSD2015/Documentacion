@@ -45,16 +45,14 @@ GO
 
 
 -------perfil------ Tabla con datos ya registrados
-
-CREATE TABLE PERFIL
-  (
-	Co_Perfil			NUMERIC (10) NOT NULL , --  PK codigo del perfil 001 ,002, 003
-    De_Perfil           VARCHAR (100) NOT NULL , -- desripcion del perfil 001:Jefe de Proyec,002: Anal Funcional,  003:programador
-    Fl_Perfil           CHAR (1) NOT NULL , -- estado del perfil : 1 Activo 2 Anulado 
-    Fe_Creacion			DATE ,
-  )
-GO
-
+CREATE TABLE [dbo].[PERFIL](
+	[IDPERFIL] [int] IDENTITY(1,1) NOT NULL,
+	[DESCRIPCION] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_PERFIL] PRIMARY KEY CLUSTERED 
+(
+	[IDPERFIL] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 -------trabajador--------- creo que debe tener ya datos y tbm podemos registrar otros 
 
 
